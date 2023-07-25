@@ -22,6 +22,11 @@
 		<constructor-arg ref="hikariConfig" />	
 	</bean>	
 	
+	<!-- 스프링에 SqlSessionFactory를 등록하는 작업은 SqlSessionFactoryBean을 이용함, MyBatis 패키지가 아니라 mybatis-spring 라이브러리 클래스임 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
 		
 	<context:component-scan base-package="org.zerock.sample"></context:component-scan>
 </beans>
