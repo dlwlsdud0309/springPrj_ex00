@@ -27,6 +27,7 @@ public class DataSourceTests {
 	@Setter(onMethod_ = {@Autowired})
 	private DataSource dataSource;
 	
+	//@Autowired
 	@Setter(onMethod_ = {@Autowired})
 	private SqlSessionFactory sqlSessionFectory;
 	
@@ -51,6 +52,7 @@ public class DataSourceTests {
 			log.info(con);
 		} catch (Exception e) {
 			fail(e.getMessage());
+//			e.printStackTrace();
 		}
 	}
 }
