@@ -31,6 +31,20 @@
 	<logger name="org.springframework.web">
 		<level value="info" />
 	</logger>
+	
+	
+	<!-- log4jdbc에서 출력되는 로그를 조절하기 위해 추가적인 <logger>를 지정 -->
+	<logger name="jdbc.audit">
+		<level value="warn" />
+	</logger>
+	
+	<logger name="jdbc.resultset">
+		<level value="warn" />
+	</logger>
+	
+	<logger name="jdbc.connection">
+		<level value="warn" />
+	</logger>
 
 	<!-- Root Logger -->
 	<root>
