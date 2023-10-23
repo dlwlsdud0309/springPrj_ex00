@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.zerock.sample2.Bakery;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -21,6 +22,9 @@ public class SampleTests {
 	@Setter(onMethod_ = {@Autowired}) //해당 인스턴스 변수가 스프링으로부터 자동으로 주입해 달라는 표시
 	private Restaurant restaurant;
 	
+	@Setter(onMethod_ = {@Autowired})
+	private Bakery bakery;
+	
 	@Test //JUnit에서 테스트 대상을 표시하는 어노테이션
 	public void testExist() {
 		
@@ -29,5 +33,14 @@ public class SampleTests {
 		log.info(restaurant);
 		log.info("------------------");
 		log.info(restaurant.getChef());
+	}
+	
+	@Test
+	public void testBakry() {
+		assertNotNull(bakery);
+		
+		log.info(bakery);
+		log.info("------------------");
+		log.info(bakery.getBread());
 	}
 }
