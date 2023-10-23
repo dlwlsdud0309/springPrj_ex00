@@ -38,5 +38,6 @@
 	<!-- MyBatis가 동작할 때 Mapper를 인식할 수 있도록 설정 추가 p.95 -->
 	<mybatis-spring:scan base-package="org.zerock.mapper" />
 		
-	<context:component-scan base-package="org.zerock.sample"></context:component-scan>
+	<context:component-scan base-package="org.zerock.sample*"></context:component-scan>
+	<!-- <context:component-scan base-package="org.zerock.sample2"></context:component-scan> -->
 </beans>
